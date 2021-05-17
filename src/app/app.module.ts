@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -13,13 +15,23 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { AccountDetailsComponent } from './components/account-details/account-details.component';
+import { OrderDetailsComponent } from './components/account-details/order-details/order-details.component';
 
 const routes: Routes = [
   {path: 'products/:id', component: ProductDetailsComponent},
   {path: 'search/:keyword', component: ProductListComponent},
   {path: 'category/:id/:name', component: ProductListComponent},
-  {path: 'category', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
+  {path: 'cart-details', component: CartDetailsComponent},
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'register', component: AuthComponent},
+  {path: 'login', component: AuthComponent},
+  {path: 'logout', component: AuthComponent},
+  {path: 'order-details/:id', component: OrderDetailsComponent},
+  {path: 'account-details', component: AccountDetailsComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', redirectTo: '/products', pathMatch: 'full'}
 ];
@@ -32,13 +44,19 @@ const routes: Routes = [
     SearchComponent,
     CheckoutComponent,
     ProductDetailsComponent,
-    CartStatusComponent
+    CartStatusComponent,
+    CartDetailsComponent,
+    AuthComponent,
+    AccountDetailsComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

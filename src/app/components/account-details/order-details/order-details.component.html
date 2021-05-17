@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <h4>Order № {{orderId}}</h4>
+        <hr>
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th width="15%">ProductImage</th>
+                    <th width="55%">Product Detail</th>
+                    <th width="30%">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let orderItem of orderItems">
+                    <td>
+                        <img src="{{orderItem.product.imageUrl}}" class="img-responsive">
+                    </td>
+                    <td>
+                        <div><span style="font-weight: bold">Name: </span> {{orderItem.product.name}}</div>
+                        <div><span style="font-weight: bold">Description: </span> {{orderItem.product.description}} </div>
+                        <div><span style="font-weight: bold">Price: </span> Price:
+                            {{orderItem.product.unitPrice | currency: 'USD'}}</div>
+                    </td>
+                    <td>
+                        <div class="items"> Quantity: {{orderItem.count}}</div>
+                        <p class="mt-2">Total cost: {{orderItem.product.unitPrice * orderItem.count | currency: 'USD'}}</p>
+                    </td>
+                </tr>
+            </tbody>
+            <tr>
+                <td colspan="2"></td>
+                <td><p>Total Cost: {{totalCost | currency: 'USD'}}</p>
+                    <p> Total Quantity: {{totalCount}} </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

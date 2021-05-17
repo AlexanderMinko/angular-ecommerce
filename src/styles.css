@@ -9,7 +9,7 @@ a.cart-btn {
  * ----------------------------
  */
 
- *{
+ * {
     margin:0;
     padding:0;
     -webkit-box-sizing:border-box;
@@ -92,19 +92,12 @@ h6{
 }
 
 a{
-    display:inline-block
+    display:inline-block;
 }
 
-a:active,a:focus,a:hover{
-    text-decoration:none;
-    outline:0
-}
-
-a,a:hover{
-    -webkit-transition:all .3s ease;
-    -o-transition:all .3s ease;
-    -moz-transition:all .3s ease;
-    transition:all .3s ease
+a:active, a:focus, a:hover{
+    text-decoration: none !important;
+    outline:0;
 }
 
 /*Layout Css*/
@@ -124,7 +117,7 @@ a,a:hover{
 }
 
 .main-content{
-    padding-top:116px;
+    padding-top:90px;
     min-height:100vh
 }
 
@@ -522,7 +515,7 @@ input.au-input.au-input-xl{
     background:#fff
 }
 .main-content.page-m{
-    padding:10% 15%!important
+    padding: 10% 30% 10% 5%
 }
 
 /* 
@@ -583,7 +576,7 @@ input.au-input.au-input-xl{
     background:#e5e5e5;
     position:relative;
     margin-bottom:45px;
-    padding:50px 20px;
+    padding:50px 20px 10px;
     border:3px solid #ccc
 }
 .form-area h3{
@@ -604,7 +597,7 @@ input.au-input.au-input-xl{
     font-size:14px;
     margin-bottom:50px
 }
-.input-space input[type=text]{
+.input-space input{
     width:100%;
     height:40px;
     border-radius:30px;

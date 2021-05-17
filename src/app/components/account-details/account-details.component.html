@@ -1,0 +1,24 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="row">
+            <div class="col-6 offset-md-1">
+                <h4>Order list: </h4>
+                <hr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th width="30%">Order №</th>
+                            <th width="70%">Created time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders">
+                            <td><a routerLink="/order-details/{{order.id}}">{{order.id}}</a></td>
+                            <td>{{order.created | date: 'y MMMM d, HH:mm'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
