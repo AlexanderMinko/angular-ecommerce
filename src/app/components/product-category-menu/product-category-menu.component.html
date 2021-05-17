@@ -1,9 +1,23 @@
 <div class="menu-sidebar-content js-scrollbar1">
-    <nav class="navbar-sidebar">
-      <ul class="list-unstyled navbar-list">
-        <li *ngFor="let pc of productCategories">
-          <a routerLink="/category/{{pc.id}}/{{pc.categoryName}}" routerLinkActive="active-link">{{pc.categoryName}}</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav class="navbar-sidebar">
+    <ul class="list-unstyled navbar-list">
+      <div *ngIf="!isAuth else logout">
+        <h5>Auth: </h5>
+        <li><a routerLink="/register">Sign up</a></li>
+        <li><a routerLink="/login">Sign in</a></li>
+      </div>
+      <ng-template #logout>
+        <h6>Hello, {{username}}!</h6>
+        <li><a routerLink="/account-details">My page</a></li> 
+        <hr>
+        <h5>Auth: </h5>
+        <li><a routerLink="/logout">Logout</a></li> 
+      </ng-template>
+      <hr>
+      <h5>Categories: </h5>
+      <li *ngFor="let pc of productCategories">
+        <a routerLink="/category/{{pc.id}}/{{pc.categoryName}}" routerLinkActive="active-link">{{pc.categoryName}}</a>
+      </li>
+    </ul>
+  </nav>
+</div>
